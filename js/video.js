@@ -12,6 +12,8 @@ const skipButton = document.getElementById('skip');
 const muteButton = document.getElementById('mute');
 const volSlider = document.getElementById('slider');
 const volumeDisplay = document.getElementById('volume');
+const vintageButton = document.getElementById('vintage');
+const originalButton = document.getElementById('orig');
 
 
 playButton.addEventListener('click', function() {
@@ -61,4 +63,14 @@ volSlider.addEventListener('input', function () {
     video.volume = volumeValue / 100;
     volumeDisplay.textContent = volumeValue + "%";
     console.log('Volume set to', volumeValue + "%");
+});
+
+vintageButton.addEventListener('click', function() {
+    video.classList.add('oldSchool');
+    console.log("Old School mode on");
+});
+
+originalButton.addEventListener('click', function() {
+    video.classList.remove('oldSchool');
+    console.log("Original style restored");
 });
